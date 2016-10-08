@@ -1,0 +1,25 @@
+{
+  "name": "lockpick-challenge",
+  "version": "1.0.0",
+  "description": "Lockpick Challenge Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install; ./node_modules/.bin/nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/familab/lockpickChallenge.git"
+  },
+  "author": "Lance Hudson <lance@lancehudson.com> (http://lancehudson.com)",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/familab/lockpickChallenge/issues"
+  },
+  "homepage": "https://github.com/familab/lockpickChallenge#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0",
+    "pi-gpio": "0.0.8",
+    "socket.io": "^1.5.0"
+  }
+}
