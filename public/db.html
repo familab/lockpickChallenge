@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-inverse">
+      <a class="navbar-brand" href="#">FamiLAB Lockpicking Challenge DB</a>
+    </nav>
+
+    <div class="container-fluid">
+      <h1>People
+        <small class="pull-xs-right"><button id="addPerson" class="btn btn-primary">Add</button> <button id="purgePeople" class="btn btn-danger">Purge</button></small>
+      </h1>
+      <table class="table" id="peopleTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <h1>Scores
+        <small class="pull-xs-right"><button id="addScore" class="btn btn-primary">Add</button> <button id="purgeScore" class="btn btn-danger">Purge</button></small>
+      </h1>
+      <table class="table" id="scoreTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Person</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div><!-- /.container-fluid -->
+
+    <div class="modal fade" id="editPerson" tabindex="-1" role="dialog" aria-labelledby="editPersonLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="editPersonLabel">Edit Person</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="editPersonId" placeholder="Id">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="editPersonName" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="editPersonContact" placeholder="Contact">
+            </div>
+            <input type="hidden" class="form-control" id="editPersonOldId">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editScore" tabindex="-1" role="dialog" aria-labelledby="editScoreLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="editScoreLabel">Edit Score</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="editScoreId" placeholder="Id">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="editScoreTime" placeholder="Time">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="editScorePerson" placeholder="Person">
+            </div>
+            <input type="hidden" class="form-control" id="editScoreOldId">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/db.js"></script>
+  </body>
+</html>

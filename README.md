@@ -22,3 +22,8 @@ cd quick2wire-gpio-admin
 make
 sudo make install
 sudo adduser $USER gpio
+
+
+# testing images for cam feed
+Cam1 - https://i.imgflip.com/1c7628.jpg
+Cam2 - https://i.imgflip.com/1c7647.jpg

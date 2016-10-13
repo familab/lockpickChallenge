@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-inverse">
+      <a class="navbar-brand" href="#">FamiLAB Lockpicking Challenge</a>
+      <ul class="nav nav-tabs navbar-nav pull-lg-right">
+        <li class="nav-item">
+          <a class="nav-link bg-inverse active" data-toggle="tab" href="#dashboard" role="tab">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#register" role="tab">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#queue" role="tab">Queue</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#score" role="tab">Score Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#room1" role="tab">Room 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#room2" role="tab">Room 2</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid" style="height: 90%">
+      <div class="row tab-content" style="height: 100%">
+        <div class="tab-pane active" id="dashboard" role="tabpanel">home</div>
+        <div class="tab-pane" id="register" role="tabpanel">
+          <div class="container m-t-2">
+          <h1 class="text-xs-center m-b-2">Register</h1>
+            <form>
+              <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                  <small id="nameHelp" class="form-text text-muted">Enter a name or something I can call you.</small>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="contact" class="col-sm-2 col-form-label">Contact Info</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="contact" aria-describedby="contactHelp">
+                  <small id="contactHelp" class="form-text text-muted">How do I contact you if you place in the top 3? (phone, sms, email, whatever).</small>
+                </div>
+              </div>
+              <div class="form-group row">
+                <p>The info I collect on this form is purely so I can make the scoreboard work and contact you if you win a prize. If this bothers you please put a fake name and no contact information.<p>
+                <p>There are video cameras inside the challenge rooms so people can see what your doing and to make it interesting. I may be streaming this live online.</p>
+                <p>You have to step over a board when going through the doorways, and its possible to get splinters, please be careful.</p>
+                <div class="col-sm-10 offset-sm-2">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" id="gotit" type="checkbox"> Got It
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane" id="queue" role="tabpanel">queue</div>
+        <div class="tab-pane" id="score" role="tabpanel">score</div>
+        <div class="tab-pane" id="room1" role="tabpanel" style="height: 100%">
+          <img src="https://i.imgflip.com/1c7628.jpg" class="img-fluid m-x-auto d-block" style="height: 100%">
+        </div>
+        <div class="tab-pane" id="room2" role="tabpanel" style="height: 100%">
+          <img src="https://i.imgflip.com/1c7647.jpg" class="img-fluid m-x-auto d-block" style="height: 100%">
+        </div>
+      </div>
+
+    </div><!-- /.container-fluid -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

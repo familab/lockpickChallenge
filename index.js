@@ -1,7 +1,9 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var gpio = require('./gpio');
+var db = require('./db');
 
 var gpioConfig = {
   pollInterval: 100, //ms
@@ -34,20 +36,8 @@ var gpioConfig = {
   }
 }
 
-Object.keys(gpioConfig.pins).forEach(function(pin) {
-  var config = gpioConfig.pins[pin];
-  gpio(pin, config.interval, gpioConfig.pollInterval, gpioConfig, config.name, io);
-});
+app.use(express.static('public'));
+db(app, io);
+routes(io, gpioConfig);
 
 server.listen(8080);
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
-
-io.on('connection', function(socket) {
-  Object.keys(gpioConfig.pins).forEach(function(pin) {
-    var config = gpioConfig.pins[pin];
-    socket.emit(config.name, config.state == true);
-  });
-});
